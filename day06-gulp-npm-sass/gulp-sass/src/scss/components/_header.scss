@@ -1,0 +1,32 @@
+header { // header
+    padding: 1em;
+    border-bottom: 1px solid gray;
+    background-color: white;
+
+    @at-root body.with-fixed-header & { // body.with-fixed-header header
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    nav { // header nav
+        display: flex;
+        justify-content: flex-end;
+
+        a { // header nav a
+            @include rounded-box(1em);
+            color: $secondary_color;
+            margin: 0 1em;
+            background-color: #c0c0c0;
+
+            &.header__menu-link--current { //header nav a.header__menu-link--current
+                font-weight: bold;
+            }
+
+            &:hover { // header nav a:hover
+                text-decoration: none;
+            }
+        }
+    }
+}

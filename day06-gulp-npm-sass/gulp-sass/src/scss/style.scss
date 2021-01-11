@@ -1,0 +1,12 @@
+@import 'variables';
+
+body {
+    font-family: $primary_font;
+    color: $primary_color;
+    max-width: $desktop_screen_width / 2;
+}
+
+@import 'common';
+@import 'components/mixins';
+
+@import 'components/header';
