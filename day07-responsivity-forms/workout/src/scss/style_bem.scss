@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+.movie {
+    background: url('https://classes.codingbootcamp.cz/assets/classes/860/dune-bg.jpg') center/cover no-repeat scroll;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+
+    &__overlay { // .movie__overlay
+        flex-grow: 1;
+        background-color: rgba(0,0,0,0.1);
+        color: black;
+        padding: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &--halfblack { // .movie__overlay--halfblack
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+        }
+    }
+
+    &__tagline { // .movie__tagline
+        font-size: 2em;
+        align-self: flex-end;
+        text-align: right;
+    }
+
+    &__title { // .movie__title
+        span { // .movie__title span
+            font-size: 3em;
+
+            @at-root body.movie--scifi & { // body.movie--scifi .movie__title span
+                color: greenyellow;
+            }
+        }
+    }
+
+    // ...
+
+}
+
+// body.movie--scifi .movie__title span {
+//     color: greenyellow;
+// }
+
+
+
+
+
