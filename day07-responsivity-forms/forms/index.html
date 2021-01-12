@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms demonstration</title>
+
+    <style>
+
+/* input:focus {
+    padding: 0.5em;
+    transition: padding 0.5s ease;
+} */
+
+    </style>
+</head>
+<body>
+
+    <form action="https://classes.codingbootcamp.cz/assets/classes/request-visualization/script.php" method="post">
+
+        <input type="hidden" name="user_is_robot" value="1">
+
+        <input type="text" name="username" value="" placeholder="Username">
+        <br>
+
+        <label for="">Biography:</label><br>
+        <textarea name="biography" cols="30" rows="10" placeholder="I was born in ..."></textarea>
+        <br>
+
+        <label for="newsletter_checkbox">Do you want a newsletter?</label>
+        <input type="checkbox" name="newsletter" value="1" id="newsletter_checkbox" checked>
+        <br>
+
+        <label>
+            Do you want a newsletter?
+            <input type="checkbox" name="newsletter2" value="1" checked>
+        </label>
+        <br>
+
+        <input type="radio" name="gender" value="male">
+        <input type="radio" name="gender" value="female">
+        <input type="radio" name="gender" value="not decided">
+        <br>
+
+        <label for="">How did you hear about us?</label>
+        <select name="how_did_you_hear" id="">
+            <option value="fb">Facebook</option>
+            <option value="google" selected>Google</option>
+            <option value="mouth">Word of mouth</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Save" name="submit">
+
+        <input type="submit" value="Delete" name="submit">
+
+    </form>
+
+</body>
+</html>
