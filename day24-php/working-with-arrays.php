@@ -44,17 +44,167 @@ foreach ($cast_crew['cast'] as $name) {
     echo $name . '<br>';
 }
 
-$cast_crew = [
+echo '<ul>';
+foreach ($cast_crew as $job => $job_names) {
 
-    'cast' => [
-        'John David Washington', // 0
-        'Robert Pattinson',      // 1
-        'Elizabeth Debicki'      // 2
+    foreach ($job_names as $name) {
+        echo '<li>' . $name . '</li>';
+    }
+
+}
+echo '</ul>';
+
+?>
+
+<ul>
+<?php foreach ($cast_crew as $job => $job_names) : ?>
+
+    <?php foreach ($job_names as $name) : ?>
+        <li><?= $name ?></li>
+    <?php endforeach; ?>
+
+<?php endforeach; ?>
+</ul>
+
+<?php
+
+// $cast_crew = [
+
+//     'cast' => [
+//         'John David Washington', // 0
+//         'Robert Pattinson',      // 1
+//         'Elizabeth Debicki'      // 2
+//     ],
+
+//     'director' => [
+//         'Christopher Nolan'      // 0
+//     ]
+
+// ];
+
+$people = [
+    [
+        'name' => 'John David Washington',
+        'job' => 'actor'
     ],
-
-    'director' => [
-        'Christopher Nolan'      // 0
+    [
+        'name' => 'Robert Pattinson',
+        'job' => 'actor'
+    ],
+    [
+        'name' => 'Christopher Nolan',
+        'job' => 'director'
+    ],
+    [
+        'name' => 'Steven Spielberg',
+        'job' => 'director'
+    ],
+    [
+        'name' => 'Michael Caine',
+        'job' => 'actor'
     ]
-
 ];
 
+$cast_crew = [];
+
+foreach ($people as $person) {
+
+    if ($person['job'] == 'actor') {
+        $cast_crew['actors'][] = $person['name'];
+    } else if ($person['job'] == 'director') {
+        $cast_crew['directors'][] = $person['name'];
+    }
+}
+
+var_dump($cast_crew);
+
+
+$default_values = [
+    'title' => null,
+    'year' => null,
+    'plot' => null,
+    'duration' => null
+];
+
+echo '<br><br>';
+var_dump($default_values);
+
+$movie = [
+    'title' => 'Tenet',
+    'year' => 2020,
+    'rating' => 7.5,
+    'duration' => 150
+];
+
+echo '<br><br>';
+var_dump($movie);
+
+$movie = array_merge($default_values, $movie);
+echo '<br><br>';
+var_dump($movie);
+
+
+$movies = [
+    [
+        'title' => 'Dunkerk',
+        'year' => 2017,
+        'pg' => 13,
+        'favourite' => false
+    ],
+    [
+        'title' => 'Tenet',
+        'year' => 2020,
+        'pg' => 13
+    ],
+    [
+        'title' => 'Interstellar',
+        'year' => 2014,
+        'pg' => 13,
+        'favourite' => false
+    ],
+    [
+        'title' => 'Inception',
+        'year' => 2010,
+        'pg' => 13,
+        'favourite' => true
+    ],
+    [
+        'title' => 'The Prestige',
+        'year' => 2006,
+        'pg' => 13
+    ],
+    [
+        'title' => 'Batman begins',
+        'year' => 2005,
+        'pg' => 12,
+        'favourite' => true
+    ],
+    [
+        'title' => 'The Dark Knight',
+        'year' => 2008,
+        'pg' => 12,
+        'favourite' => true
+    ],
+    [
+        'title' => 'The Dark Knight Rises',
+        'year' => 2012,
+        'pg' => 12,
+        'favourite' => false
+    ],
+];
+
+
+$favourite_movies = [];
+
+foreach ($movies as $movie) {
+    if (array_key_exists('favourite', $movie) && $movie['favourite'] === true) {
+    // if (isset($movie['favourite']) && $movie['favourite'] === true) {
+    // if (!empty($movie['favourite'])) {
+
+        $favourite_movies[] = $movie['title'];
+
+    }
+}
+
+echo '<br><br>';
+var_dump($favourite_movies);
