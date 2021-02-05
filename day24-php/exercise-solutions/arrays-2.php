@@ -33,7 +33,7 @@ $movies = [
 
         <li><?= $movies[$i] ?></li>
 
-    <?php endforeach; ?>
+    <?php endfor; ?>
 
 </ol>
 
